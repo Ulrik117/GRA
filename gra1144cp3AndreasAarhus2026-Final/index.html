@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantastic Mr. Fox | Andreas Aarhus Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #593023; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #593023;
+            padding: 20px 0;
+        }
+
+       
+        #wrapper {
+            width: 1366px; 
+            margin: 0 auto;
+            background-color: #F2E8CF; 
+            border: 8px double #593023; 
+            outline: 15px solid #D97941; 
+            min-height: 1024px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+
+       
+        header {
+            background-color: #D97941; 
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 8px solid #F2C84B; 
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 90px;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+            color: #593023;
+            
+            text-shadow: 4px 4px 0px #F2C84B, 8px 8px 0px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            display: inline; 
+            margin: 0 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #593023;
+            font-weight: bold;
+            font-size: 20px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+       
+        nav ul li a:hover {
+            background-image: url('apple-back.jpg'); 
+            background-repeat: repeat;
+            background-size: 80px;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transform: scale(1.5); 
+            font-weight: 900;
+        }
+
+       
+        .divider {
+            text-align: center;
+            color: #593023;
+            font-size: 28px;
+            margin: 30px 0;
+            letter-spacing: 10px;
+        }
+
+       
+        main {
+            padding: 40px;
+        }
+
+        #hero-banner {
+            margin-bottom: 20px;
+            border: 6px solid #593023;
+            border-radius: 15px; 
+            overflow: hidden;
+        }
+
+       
+        .left-col {
+            float: left; 
+            width: 62%;
+            padding-right: 40px;
+        }
+
+        .right-col {
+            float: right; 
+            width: 33%;
+            background-color: #D97941;
+            padding: 30px;
+            border-radius: 20px; 
+            border: 3px solid #593023;
+            color: #F2E8CF;
+            box-shadow: 5px 5px 0px #F2C84B;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both; 
+            display: table;
+        }
+
+        
+        h2 { margin-bottom: 20px; font-size: 32px; font-style: italic; }
+        h3 { margin-bottom: 15px; color: #593023; text-transform: uppercase; }
+        p { line-height: 1.8; margin-bottom: 25px; font-size: 18px; }
+        .cast-list { padding-left: 20px; line-height: 2; font-weight: bold; list-style-type: square; }
+
+        #trailer-section {
+            margin-top: 40px;
+            border-top: 2px dashed #D97941;
+            padding-top: 30px;
+        }
+
+       
+        footer {
+            clear: both; 
+            background-color: #222;
+            color: #999;
+            padding: 50px;
+            text-align: center;
+            font-size: 13px;
+            border-top: 10px solid #F2C84B;
+        }
+
+        .disclaimer {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<div id="wrapper">
+    <header>
+        <h1>Fantastic Mr. Fox</h1>
+        <nav>
+            <ul>
+                <li><a href="#">The Story</a></li>
+                <li><a href="#">Cast & Crew</a></li>
+                <li><a href="#">The Farmers</a></li>
+                <li><a href="#">Trailer</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="clearfix">
+        <section id="hero-banner">
+            <img src="banner-pic.jpg" alt="Fantastic Mr. Fox Banner" style="width:100%; display:block;">
+        </section>
+
+        <div class="divider">◆ ◆ ◆</div>
+
+        <div class="left-col">
+            <h2>"Boggis, Bunce, and Bean"</h2>
+            <p>Based on the beloved book by Roald Dahl, Wes Anderson's stop-motion masterpiece tells the story of Mr. Fox and his wild community of animal friends. Explore this film in theaters, at home, and with friends and family.</p>
+            
+            <div id="trailer-section">
+                <h3>Official Trailer</h3>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/n2igjYFojUo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <aside class="right-col">
+            <h2>The Cast</h2>
+            <ul class="cast-list">
+                <li>George Clooney (Mr. Fox)</li>
+                <li>Meryl Streep (Mrs. Fox)</li>
+                <li>Jason Schwartzman (Ash)</li>
+                <li>Bill Murray (Badger)</li>
+                <li>Willem Dafoe (Rat)</li>
+            </ul>
+            <br>
+            <img src="cast-pic.jpg" alt="Fantastic Mr. Fox Cast" style="width:100%; border: 3px solid #F2C84B; border-radius: 10px;">
+        </aside>
+    </main>
+
+    <footer>
+        <div class="disclaimer">
+            <p>© 2026, Andreas Aarhus. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
