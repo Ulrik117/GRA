@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE ROYAL DANISH THEATER | Andreas Aarhus</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;700&family=Space+Mono:ital@1&display=swap" rel="stylesheet">
+
+<style type="text/css">
+	:root {
+		--bg-cream: #e8e2d6;
+		--black: #1a1a1a;
+		--royal-red: #d92d20;
+		--electric-blue: #2970ff;
+		--sun-yellow: #ffc107;
+	}
+
+	* { 
+		box-sizing: border-box; 
+		margin: 0; 
+		padding: 0; 
+		cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='fill:%23d92d20;stroke:black;stroke-width:2px'><polygon points='0,0 20,5 5,20'/></svg>"), auto !important;
+	}
+
+	body {
+		margin: 0;
+		background-color: #111;
+		font-family: 'Space Grotesk', sans-serif;
+		color: var(--black);
+		scroll-behavior: smooth;
+	}
+
+	wrapper {
+		width: 100%;
+		max-width: 1366px;
+		margin: auto;
+		display: block;
+		background-color: var(--bg-cream);
+		overflow: hidden;
+		position: relative;
+		box-shadow: 0 0 100px rgba(0,0,0,0.8);
+	}
+
+	header {
+		height: 220px;
+		background: linear-gradient(90deg, var(--sun-yellow) 0%, #ff8c00 100%);
+		border-bottom: 10px solid var(--black);
+		display: flex;
+		align-items: center;
+		padding: 0 40px 0 0px; 
+		gap: 0; 
+	}
+
+	.header-logo-link { display: block; line-height: 0; padding-right: 15px; }
+	.year-marker-image { height: 160px; width: auto; transition: filter 0.3s ease; }
+	.header-logo-link:hover .year-marker-image { filter: brightness(0) invert(1); }
+
+	header h1 {
+		font-family: 'Archivo Black', sans-serif;
+		font-size: 3.8rem;
+		line-height: 0.85;
+		text-transform: uppercase;
+		margin: 0;
+		letter-spacing: -2px;
+	}
+
+	.header-subtitle {
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		margin-top: 8px;
+		color: var(--royal-red);
+		font-size: 1.1rem;
+	}
+
+	section {
+		min-height: 1024px;
+		padding: 60px;
+		border-bottom: 10px solid var(--black);
+		display: grid;
+		grid-template-columns: 350px 1fr;
+		gap: 60px;
+		align-items: start;
+		position: relative;
+		background-image: 
+			linear-gradient(rgba(0,0,0,0.12) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(0,0,0,0.12) 1px, transparent 1px);
+		background-size: 50px 50px;
+	}
+
+	#history, #media, #location { min-height: 850px; }
+
+	aside { display: flex; flex-direction: column; gap: 40px; }
+
+	.logo-home {
+		display: block;
+		width: 100%;
+		background: var(--black);
+		border: 5px solid var(--black);
+		padding: 20px;
+		box-sizing: border-box;
+		transition: all 0.3s ease;
+	}
+	.logo-home img { width: 100%; height: auto; filter: brightness(0) invert(1); }
+
+	#history .logo-home { box-shadow: 12px 12px 0 var(--electric-blue); }
+	#history .logo-home:hover { background: var(--electric-blue); box-shadow: 12px 12px 0 var(--black); transform: translate(4px, 4px); }
+
+	#media .logo-home { box-shadow: 12px 12px 0 var(--sun-yellow); }
+	#media .logo-home:hover { background: var(--sun-yellow); box-shadow: 12px 12px 0 var(--black); transform: translate(4px, 4px); }
+
+	#location .logo-home { box-shadow: 12px 12px 0 var(--royal-red); }
+	#location .logo-home:hover { background: var(--royal-red); box-shadow: 12px 12px 0 var(--black); transform: translate(4px, 4px); }
+
+	nav { border: 5px solid var(--black); background: #fff; padding: 25px; box-shadow: 12px 12px 0px var(--black); }
+	nav ul { list-style: disc; padding-left: 25px; margin: 0; }
+	nav li { font-family: 'Archivo Black', sans-serif; font-size: 1.6rem; text-transform: uppercase; border-bottom: 3px solid var(--black); }
+	nav a { text-decoration: none; color: var(--black); display: block; padding: 12px 0; transition: 0.2s; }
+	nav a:hover { color: var(--royal-red); transform: translateX(10px); font-style: italic; }
+
+	.sidebar-info-box { border: 5px solid var(--black); background: #fff; padding: 20px; box-shadow: 10px 10px 0px var(--black); }
+	.sidebar-info-box h4 { font-family: 'Archivo Black', sans-serif; text-transform: uppercase; margin-bottom: 10px; border-bottom: 3px solid var(--black); }
+
+	.content-card { background-color: rgba(255, 255, 255, 0.95); border: 5px solid var(--black); padding: 40px; z-index: 5; box-shadow: 20px 20px 0px var(--black); }
+	h2 { font-family: 'Archivo Black', sans-serif; font-size: 4.2rem; margin-bottom: 30px; text-transform: uppercase; border-left: 20px solid var(--royal-red); padding-left: 25px; line-height: 1; }
+
+	.season-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 40px; }
+	.season-box { border: 5px solid var(--black); height: 260px; position: relative; overflow: hidden; background: #000; }
+	.season-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s ease; }
+	.season-box:hover img { transform: scale(1.1); opacity: 0.7; }
+	
+	.season-label {
+		position: absolute; bottom: -70px; left: 0; right: 0;
+		background: var(--royal-red); color: #fff; padding: 10px;
+		text-align: center; font-family: 'Archivo Black', sans-serif;
+		text-transform: uppercase; transition: bottom 0.3s ease; line-height: 1.2;
+	}
+	.season-box:hover .season-label { bottom: 0; }
+
+	.bottom-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+	.tickets-box { background: var(--black); color: #fff; padding: 40px; text-align: center; border: 5px solid var(--black); display: flex; flex-direction: column; justify-content: center; transition: 0.3s; box-shadow: 12px 12px 0 var(--sun-yellow); }
+	.tickets-box:hover { background: var(--royal-red); transform: translate(-5px, -5px); }
+	
+	.exterior-frame { border: 5px solid var(--black); height: 350px; overflow: hidden; box-shadow: 12px 12px 0 var(--electric-blue); }
+	.exterior-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+	.image-placeholder { border: 5px solid var(--black); position: relative; overflow: hidden; height: 230px; background: #000; }
+	.image-placeholder img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s ease; }
+	.image-placeholder:hover img { transform: scale(1.1); opacity: 0.7; }
+	.arch-frame { border-radius: 110px 110px 0 0; }
+	
+	.placeholder-label {
+		position: absolute; bottom: -85px; left: 0; right: 0;
+		background: var(--black); color: #fff; padding: 10px;
+		text-align: center; font-family: 'Archivo Black', sans-serif;
+		text-transform: uppercase; transition: bottom 0.3s ease; line-height: 1.2;
+	}
+	.image-placeholder:hover .placeholder-label { bottom: 0; }
+
+	footer { 
+		min-height: 160px; 
+		background: var(--black); 
+		color: #fff; 
+		display: flex; 
+		align-items: center; 
+		justify-content: center; 
+		font-family: 'Space Grotesk', sans-serif; 
+		text-align: center; 
+		padding: 40px; 
+		font-size: 0.85rem;
+		line-height: 1.5;
+	}
+
+	@media (max-width: 1024px) {
+		section { grid-template-columns: 1fr; height: auto; min-height: auto; padding: 30px; }
+		aside { order: 2; gap: 20px; }
+		.content-card { order: 1; margin-bottom: 40px; }
+		header h1 { font-size: 2.5rem; }
+		h2 { font-size: 3rem; }
+		.season-grid, .bottom-layout { grid-template-columns: 1fr; }
+	}
+</style>
+</head>
+
+<body>
+<wrapper>
+	<header id="top">
+		<a href="#top" class="header-logo-link">
+			<img src="logo.png" alt="Logo" class="year-marker-image">
+		</a>
+		<div class="title-group">
+			<h1>THE ROYAL<br>DANISH THEATER</h1>
+			<div class="header-subtitle">DET KONGELIGE TEATER</div>
+		</div>
+	</header>
+	
+	<main>
+		<section id="home">
+			<aside>
+				<nav>
+					<ul>
+						<li><a href="#history">HISTORY</a></li>
+						<li><a href="#media">MEDIA</a></li>
+						<li><a href="#location">LOCATION</a></li>
+					</ul>
+				</nav>
+				<div style="height: 440px; border: 5px solid var(--black); overflow: hidden; background:#fff;">
+					<iframe src="https://calendar.google.com/calendar/embed?height=450&wkst=1&ctz=Europe%2FCopenhagen&showPrint=0&showCalendars=0&src=ZW4uZGVubWFyayNob2xpZGF5QGdyb3VwLnYuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23000000" style="border:0" width="100%" height="100%" frameborder="0"></iframe>
+				</div>
+			</aside>
+
+			<div class="content-card" style="box-shadow: 20px 20px 0 var(--royal-red);">
+				<h2>THE SEASON</h2>
+				<div class="season-grid">
+					<div class="season-box"><img src="Lady Macbeth.jpg" alt="Lady Macbeth"><div class="season-label">Lady Macbeth</div></div>
+					<div class="season-box"><img src="Idomeneo.jpg" alt="Idomeneo"><div class="season-label">Idomeneo</div></div>
+					<div class="season-box"><img src="Don pasquale.jpg" alt="Don Pasquale"><div class="season-label">Don Pasquale</div></div>
+				</div>
+				<div class="bottom-layout">
+					<div class="tickets-box">
+						<h3 style="font-family:'Archivo Black'; font-size: 2.2rem;">TICKETS</h3>
+						<p style="font-weight:700; margin-top:10px;">RESERVE YOUR SEAT<br>FOR THE 2026 SEASON</p>
+					</div>
+					<div class="exterior-frame"><img src="outside.jpg" alt="Exterior"></div>
+				</div>
+			</div>
+		</section>
+
+		<section id="history" style="background-color: var(--royal-red);">
+			<aside>
+				<a href="#top" class="logo-home"><img src="logo.png" alt="Home"></a>
+				<nav>
+					<ul>
+						<li><a href="#media">MEDIA</a></li>
+						<li><a href="#location">LOCATION</a></li>
+					</ul>
+				</nav>
+				<div class="sidebar-info-box">
+					<h4>Legacy Info</h4>
+					<p>Performing since 1748, bridging three centuries of art.</p>
+				</div>
+			</aside>
+			<div class="content-card" style="box-shadow: 20px 20px 0 var(--sun-yellow);">
+				<h2>OUR LEGACY</h2>
+				<div class="season-grid">
+					<div class="image-placeholder"><img src="Old Stage.jpg" alt="Old Stage"><div class="placeholder-label">The Old Stage<br>1748</div></div>
+					<div class="image-placeholder"><img src="Opera house.jpg" alt="Opera House"><div class="placeholder-label">The Opera House<br>2005</div></div>
+					<div class="image-placeholder"><img src="Playhouse.jpg" alt="Playhouse"><div class="placeholder-label">The Royal Playhouse<br>2008</div></div>
+				</div>
+				<div style="background: var(--black); color: #fff; padding: 40px; border: 5px solid var(--black); text-align: center;">
+					<p style="font-family: 'Archivo Black', sans-serif; font-size: 1.4rem;">TRADITION IN COPENHAGEN SINCE 1748.</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="media" style="background-color: var(--electric-blue);">
+			<aside>
+				<a href="#top" class="logo-home"><img src="logo.png" alt="Home"></a>
+				<nav>
+					<ul>
+						<li><a href="#history">HISTORY</a></li>
+						<li><a href="#location">LOCATION</a></li>
+					</ul>
+				</nav>
+				<div class="sidebar-info-box" style="display: flex; align-items: center; justify-content: center; background: #fff; padding: 10px;">
+					<img src="social.webp" alt="Social Media" style="width: 100%; height: auto;">
+				</div>
+			</aside>
+			<div class="content-card" style="box-shadow: 20px 20px 0 var(--royal-red);">
+				<h2>HIGHLIGHTS</h2>
+				<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+					<div style="border: 5px solid var(--black); background:#fff; line-height: 0; padding:10px;">
+						<iframe width="100%" height="450" src="https://www.youtube.com/embed/wlOmZUlTtes" title="Trailer" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div style="display: flex; flex-direction: column; gap: 20px;">
+						<div class="image-placeholder"><img src="tables.webp" alt="Foyer"><div class="placeholder-label">Foyer Architecture</div></div>
+						<div class="image-placeholder arch-frame"><img src="stage.jpg" alt="Main Stage"><div class="placeholder-label">Main Stage</div></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="location" style="background-color: var(--sun-yellow);">
+			<aside>
+				<a href="#top" class="logo-home"><img src="logo.png" alt="Home"></a>
+				<nav>
+					<ul>
+						<li><a href="#history">HISTORY</a></li>
+						<li><a href="#media">MEDIA</a></li>
+					</ul>
+				</nav>
+				<div class="sidebar-info-box">
+					<h4>Office Hours</h4>
+					<p>Daily: 10:00 - 22:00</p>
+				</div>
+			</aside>
+			<div class="content-card" style="box-shadow: 20px 20px 0 var(--electric-blue);">
+				<h2>VISIT US</h2>
+				<p style="font-size: 1.4rem; font-weight: bold; margin-bottom: 25px;">Sankt Annæ Plads 36, 1250 København, Denmark</p>
+				<div style="height: 480px; border: 5px solid var(--black); overflow: hidden; background:#fff;">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.2312344799043!2d12.590833216035176!3d55.68116198053641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465253214102426d%3A0xe1d1403d832f9661!2sRoyal%20Danish%20Playhouse!5e0!3m2!1sen!2sdk!4v1647000000000!5m2!1sen!2sdk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				</div>
+			</div>
+		</section>
+	</main>
+	
+	<footer>
+		© 2026, Andreas Aarhus. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.
+	</footer>
+</wrapper>
+</body>
+</html>
