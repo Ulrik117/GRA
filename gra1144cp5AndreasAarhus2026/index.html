@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daft Punk | Official | 2026</title>
+<style>
+    /* 1. CORE SETUP & BACKGROUND */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body, html {
+        height: 100%;
+        background-color: #000;
+        /* REQUIRED FILENAME: Daft Punk.webp */
+        background: #000 url('Daft Punk.webp') no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+        font-family: 'Inter', sans-serif;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.95) 100%);
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    /* 2. THE INTRO GATE (Top-Left Alignment) */
+    #intro-gate {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: flex-start; 
+        align-items: flex-start;    
+        padding-top: 150px; 
+        padding-left: 20px; 
+        z-index: 1; 
+        pointer-events: none;
+    }
+
+    .logo-container {
+        position: relative;
+        width: 850px; 
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Logo Stacking Logic */
+    #daftPart, #punkPart {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        opacity: 0;
+        will-change: transform, opacity;
+    }
+
+    /* Entrance Animations (Steady 2.5s Cinematic Glide) */
+    .animate-daft { animation: slideInLeft 2.5s cubic-bezier(0.19, 1, 0.22, 1) forwards; }
+    .animate-punk { animation: slideInTop 2.5s cubic-bezier(0.19, 1, 0.22, 1) forwards; }
+
+    @keyframes slideInLeft {
+        0% { transform: translateX(-120vw); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideInTop {
+        0% { transform: translateY(-100vh); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+    }
+
+    /* 3. SCROLL HINT (Transparent, Widely Spaced) */
+    .scroll-hint {
+        position: fixed;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+        opacity: 0;
+        transition: opacity 1.2s ease;
+        pointer-events: none;
+    }
+
+    .scroll-hint p {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 12px;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 300;
+        animation: subtlePulse 3s infinite ease-in-out;
+    }
+
+    @keyframes subtlePulse {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 1; }
+    }
+
+    /* 4. SLEEK 10-BAR NAVIGATION */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 1000;
+        opacity: 0;
+        transform: translateY(-20px);
+        /* REFINED TEMPO: Transition slowed to 1.2s */
+        transition: opacity 1.2s ease, transform 1.2s ease;
+    }
+
+    nav.reveal { opacity: 1; transform: translateY(0); }
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        width: 1200px; 
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #777;
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        transition: 0.3s;
+    }
+
+    nav ul li a:hover, nav ul li a.active {
+        color: #fff;
+        text-shadow: 0 0 10px #ffcc00;
+    }
+
+    /* 5. CONTENT WRAPPER */
+    #wrapper {
+        position: relative;
+        z-index: 10; 
+        width: 1200px;
+        margin: 100vh auto 0 auto;
+        background: #0a0a0a; 
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 -20px 100px rgba(0,0,0,1);
+    }
+
+    main {
+        padding: 150px 100px;
+        min-height: 1200px;
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+
+    .mini-logo {
+        width: 140px;
+        margin-right: 40px;
+        filter: invert(1);
+    }
+
+    h2 {
+        font-size: 4rem;
+        font-weight: 200;
+        text-transform: uppercase;
+        letter-spacing: -3px;
+        color: #fff;
+    }
+
+    .copy-text {
+        max-width: 800px;
+        font-size: 1.25rem;
+        line-height: 2.1;
+        color: #888;
+        border-left: 1px solid #ffcc00;
+        padding-left: 40px;
+    }
+
+    footer {
+        padding: 80px;
+        background: #000;
+        border-top: 1px solid #222;
+    }
+
+    footer p {
+        font-size: 0.65rem;
+        color: #333;
+        text-align: justify;
+        line-height: 2;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+</style>
+</head>
+
+<body>
+
+    <section id="intro-gate">
+        <div class="logo-container">
+            <img src="Daft.png" alt="Daft" id="daftPart" class="animate-daft">
+            <img src="Punk.png" alt="Punk" id="punkPart" class="animate-punk">
+        </div>
+    </section>
+
+    <div class="scroll-hint" id="accessHint">
+        <p>Scroll to Access</p>
+    </div>
+
+    <nav id="mainNav">
+        <ul>
+            <li><a href="#" id="homeLink" class="active">Home</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="music.html">Music Store</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="tour.html">Concerts</a></li>
+            <li><a href="photos.html">Photo Gallery</a></li>
+            <li><a href="mailing.html">Mailing List</a></li>
+            <li><a href="merch.html">Merch Store</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+    </nav>
+
+    <div id="wrapper">
+        <main>
+            <div class="header-content">
+                <img src="PunkLogo.jpg" alt="Logo" class="mini-logo">
+                <h2>Random Access Memories</h2>
+            </div>
+
+            <div class="copy-text">
+                <p>Welcome back to the digital grid. This interface prioritizes the physical motion of the robots' legacy by using layered depth and refined interaction timing.</p>
+                <br>
+                <p>The updated navigation transition is now set to 1.2 seconds, following a 2-second delay on load. This ensures the primary identity is established before the interface elements arrive. Click the Home button to re-trigger the robotics arrival sequence.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious.</p>
+        </footer>
+    </div>
+
+    <script>
+        const daft = document.getElementById('daftPart');
+        const punk = document.getElementById('punkPart');
+        const nav = document.getElementById('mainNav');
+        const hint = document.getElementById('accessHint');
+        const homeBtn = document.getElementById('homeLink');
+
+        window.addEventListener('load', () => {
+            // REFINED DELAY: Menu reveal moved to 2000ms
+            setTimeout(() => { nav.classList.add('reveal'); }, 2000);
+            setTimeout(() => { hint.style.opacity = '1'; }, 3000);
+        });
+
+        function triggerIntro() {
+            daft.classList.remove('animate-daft');
+            punk.classList.remove('animate-punk');
+            void daft.offsetWidth; 
+            daft.classList.add('animate-daft');
+            punk.classList.add('animate-punk');
+            hint.style.opacity = '1';
+        }
+
+        window.addEventListener('scroll', () => {
+            let val = window.scrollY;
+            if (val > 50) {
+                hint.style.opacity = '0';
+            } else {
+                hint.style.opacity = '1';
+            }
+        });
+
+        homeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(triggerIntro, 500);
+        });
+    </script>
+
+</body>
+</html>

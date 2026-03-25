@@ -1,0 +1,16 @@
+@charset "UTF-8";
+body {
+    margin: 0;
+    background-color: midnightblue;
+    height: 100vh;
+    background-attachment: fixed;
+}
+wrapper {
+    width: 1920px;
+}
+.logo {
+    width: 200px;
+    margin: 10px;
+    height: 200px;
+    vertical-align: middle;
+}
