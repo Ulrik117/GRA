@@ -7,26 +7,95 @@
 <link rel="stylesheet" href="style.css">
 <style>
     #wrapper {
-        position: relative; z-index: 10; width: 1000px; margin: 120px auto 60px auto;
-        background: rgba(5, 5, 10, 0.95); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 0 100px rgba(0,0,0,1);
+        position: relative; 
+        z-index: 10; 
+        width: 1000px; 
+        margin: 120px auto 60px auto;
+        background: rgba(5, 5, 10, 0.95); 
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 100px rgba(0,0,0,1);
     }
+
     main { padding: 40px; }
-    .square-matrix { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 1fr); gap: 15px; aspect-ratio: 1 / 1; width: 100%; }
-    .grid-item { position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.15); transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); background: #000; }
+
+    .square-matrix {
+        display: grid; 
+        grid-template-columns: repeat(4, 1fr); 
+        grid-template-rows: repeat(4, 1fr); 
+        gap: 15px; 
+        aspect-ratio: 1 / 1; 
+        width: 100%;
+    }
+
+    .grid-item {
+        position: relative; 
+        overflow: hidden; 
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+        background: #000;
+    }
+
     .grid-item[data-label*="Japan"] { --signal: #00f2ff; }
     .grid-item[data-label*="France"] { --signal: #ff0055; }
     .grid-item[data-label*="Germany"] { --signal: #ffd700; }
     .grid-item[data-label*="Archive"] { --signal: #7000ff; }
-    .grid-item:hover { border-color: var(--signal); z-index: 10; transform: scale(1.02); box-shadow: 0 0 30px var(--signal); }
-    .grid-item img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.6) sepia(0.5) brightness(0.7); transition: 0.8s ease; }
-    .grid-item:hover img { filter: grayscale(0) sepia(0) brightness(1.1); transform: scale(1.1); }
-    .grid-item::after { content: attr(data-label); position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.8); padding: 4px 10px; font-family: 'Space Mono', monospace; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 2px; border-left: 2px solid var(--signal); color: var(--signal); opacity: 0.8; transition: 0.3s; z-index: 5; }
-    .grid-item:hover::after { opacity: 1; background: var(--signal); color: #000; }
-    .grid-item::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02)); background-size: 100% 4px, 4px 100%; pointer-events: none; z-index: 2; }
-    .item-1 { grid-area: 1 / 1 / 3 / 3; } .item-2 { grid-area: 1 / 3 / 2 / 5; } .item-3 { grid-area: 2 / 3 / 3 / 4; } .item-4 { grid-area: 2 / 4 / 3 / 5; } .item-5 { grid-area: 3 / 1 / 4 / 3; } .item-6 { grid-area: 3 / 3 / 5 / 5; } .item-7 { grid-area: 4 / 1 / 5 / 2; } .item-8 { grid-area: 4 / 2 / 5 / 3; }
+
+    .grid-item:hover { 
+        border-color: var(--signal); 
+        z-index: 10; 
+        transform: scale(1.02); 
+        box-shadow: 0 0 30px var(--signal); 
+    }
+
+    .grid-item img {
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover;
+        filter: grayscale(0.6) sepia(0.5) brightness(0.7); 
+        transition: 0.8s ease;
+    }
+
+    .grid-item:hover img { 
+        filter: grayscale(0) sepia(0) brightness(1.1); 
+        transform: scale(1.1); 
+    }
+
+    .grid-item::after {
+        content: attr(data-label); 
+        position: absolute; 
+        bottom: 10px; 
+        left: 10px;
+        background: rgba(0,0,0,0.8); 
+        padding: 4px 10px; 
+        font-family: 'Space Mono', monospace;
+        font-size: 0.55rem; 
+        text-transform: uppercase; 
+        letter-spacing: 2px;
+        border-left: 2px solid var(--signal); 
+        color: var(--signal); 
+        opacity: 0.8; 
+        transition: 0.3s;
+        z-index: 5;
+    }
+
+    .grid-item:hover::after { 
+        opacity: 1; 
+        background: var(--signal); 
+        color: #000; 
+    }
+
+    .item-1 { grid-area: 1 / 1 / 3 / 3; } 
+    .item-2 { grid-area: 1 / 3 / 2 / 5; }
+    .item-3 { grid-area: 2 / 3 / 3 / 4; } 
+    .item-4 { grid-area: 2 / 4 / 3 / 5; }
+    .item-5 { grid-area: 3 / 1 / 4 / 3; } 
+    .item-6 { grid-area: 3 / 3 / 5 / 5; }
+    .item-7 { grid-area: 4 / 1 / 5 / 2; } 
+    .item-8 { grid-area: 4 / 2 / 5 / 3; }
 </style>
 </head>
 <body>
+
     <nav id="mainNav">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -41,20 +110,48 @@
             <li><a href="Policy.html">Privacy Policy</a></li>
         </ul>
     </nav>
+
     <div id="wrapper">
         <main>
             <div class="square-matrix">
-                <div class="grid-item item-1" data-label="Japan_01"><img src="japan1.jpg"></div>
-                <div class="grid-item item-2" data-label="Japan_02"><img src="japan2.webp"></div>
-                <div class="grid-item item-3" data-label="France_01"><img src="paris1.jfif"></div>
-                <div class="grid-item item-4" data-label="France_02"><img src="paris2.jpg"></div>
-                <div class="grid-item item-5" data-label="Germany_01"><img src="GERMANY1.webp"></div>
-                <div class="grid-item item-6" data-label="Germany_02"><img src="germany2.webp"></div>
-                <div class="grid-item item-7" data-label="Archive_S1"><img src="s1.jpg"></div>
-                <div class="grid-item item-8" data-label="Archive_S2"><img src="s2.jpg"></div>
+                <div class="grid-item item-1" data-label="Japan_01">
+                    <img src="japan1.jpg" alt="Daft Punk Japan Session">
+                </div>
+
+                <div class="grid-item item-2" data-label="Japan_02">
+                    <img src="japan2.webp" alt="Daft Punk Tokyo Event">
+                </div>
+
+                <div class="grid-item item-3" data-label="France_01">
+                    <img src="paris1.jfif" alt="Daft Punk Paris Studio">
+                </div>
+
+                <div class="grid-item item-4" data-label="France_02">
+                    <img src="paris2.jpg" alt="Daft Punk France Archive">
+                </div>
+
+                <div class="grid-item item-5" data-label="Germany_01">
+                    <img src="germany1.webp" alt="Daft Punk Berlin Performance">
+                </div>
+
+                <div class="grid-item item-6" data-label="Germany_02">
+                    <img src="germany2.webp" alt="Daft Punk Germany Session">
+                </div>
+
+                <div class="grid-item item-7" data-label="Archive_01">
+                    <img src="s1.jpg" alt="Daft Punk Helmet Detail">
+                </div>
+
+                <div class="grid-item item-8" data-label="Archive_02">
+                    <img src="s2.jpg" alt="Daft Punk Equipment Archive">
+                </div>
             </div>
         </main>
-        <footer><p>&copy; 2026, Andreas Aarhus. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p></footer>
+
+        <footer>
+            <p>&copy; 2026, Andreas Aarhus. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p>
+        </footer>
     </div>
+
 </body>
 </html>
