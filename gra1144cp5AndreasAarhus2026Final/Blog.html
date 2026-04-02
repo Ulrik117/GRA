@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daft Punk | Archive Logs | Andreas Aarhus, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+    body::after { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(15, 15, 35, 0.3) 0%, rgba(0,0,0,0.95) 100%); z-index: 2; pointer-events: none; }
+    #wrapper { position: relative; z-index: 10; width: 1200px; margin: 80px auto 0 auto; background: rgba(5, 5, 10, 0.98); border-left: 1px solid rgba(255, 255, 255, 0.05); border-right: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 0 100px rgba(0,0,0,1); min-height: 100vh; display: flex; flex-wrap: wrap; padding: 0; }
+    .sidebar-logs { width: 350px; border-right: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 20px; }
+    .log-item { padding: 20px; border: 1px solid rgba(255, 255, 255, 0.05); margin-bottom: 15px; cursor: pointer; transition: 0.3s; background: rgba(255, 255, 255, 0.01); }
+    .log-item:hover, .log-item.active { border-color: #00ffa2; background: rgba(0, 255, 162, 0.05); }
+    .log-date { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: #00ffa2; margin-bottom: 5px; }
+    .log-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #fff; }
+    .main-content { flex: 1; padding: 60px 80px; background: rgba(0, 0, 0, 0.2); }
+    .article-header { border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 30px; margin-bottom: 40px; }
+    .article-header h2 { font-size: 1.8rem; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 10px; }
+    .article-body { font-family: 'Inter', sans-serif; line-height: 1.8; color: #ccc; font-size: 0.95rem; }
+    .scanner-line { width: 100%; height: 1px; background: rgba(0, 255, 162, 0.3); position: relative; margin-top: 50px; }
+</style>
+</head>
+<body>
+    <nav id="mainNav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="News.html">News</a></li>
+            <li><a href="music.html">Music Store</a></li>
+            <li><a href="Videos.html">Videos</a></li>
+            <li><a href="Concert.html">Concerts</a></li>
+            <li><a href="Photo.html">Photo Gallery</a></li>
+            <li><a href="Mail.html">Mailing List</a></li>
+            <li><a href="Merch.html">Merch Store</a></li>
+            <li><a href="Blog.html" class="active">Blog</a></li>
+            <li><a href="Policy.html">Privacy Policy</a></li>
+        </ul>
+    </nav>
+    <div id="wrapper">
+        <aside class="sidebar-logs">
+            <div class="log-item active">
+                <div class="log-date">2026.04.01 // LOG_001</div>
+                <div class="log-title">Random Access Memories: The Legacy</div>
+            </div>
+            <div class="log-item"><div class="log-date">2026.03.25 // LOG_002</div><div class="log-title">The Evolution of the Pyramid</div></div>
+        </aside>
+        <main class="main-content">
+            <article>
+                <div class="article-header"><h2>Random Access Memories</h2><div class="log-date">AUTHORIZED ACCESS ONLY</div></div>
+                <div class="article-body">
+                    <p>Technologic. Human After All. One More Time. These are not just songs; they are blueprints.</p>
+                    <p>The helmets were never a mask—they were the interface.</p>
+                </div>
+                <div class="scanner-line"></div>
+            </article>
+        </main>
+        <footer><p>&copy; 2026, Andreas Aarhus. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p></footer>
+    </div>
+</body>
+</html>

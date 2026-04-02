@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daft Punk | Music Store | Andreas Aarhus, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+    main { padding: 60px 80px; }
+    #wrapper {
+        position: relative; z-index: 10; width: 1200px; margin: 80px auto 0 auto;
+        background: rgba(10, 10, 10, 0.98); border-left: 1px solid rgba(255, 255, 255, 0.05);
+        border-right: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 0 100px rgba(0,0,0,1); min-height: 100vh;
+    }
+    .store-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 20px; }
+    .store-header h1 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; color: #fff; }
+    .store-stats { display: flex; gap: 40px; }
+    .stat-item { text-align: right; }
+    .stat-label { display: block; font-size: 0.55rem; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+    .stat-value { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #fff; transition: color 0.3s ease, text-shadow 0.3s ease; }
+    .music-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; perspective: 1200px; }
+    .album-anchor { width: 100%; aspect-ratio: 1 / 1; transform-style: preserve-3d; }
+    .album-card { width: 100%; height: 100%; background: #000; position: relative; transform-style: preserve-3d; transition: transform 0.1s ease-out, box-shadow 0.3s ease, border 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.8); cursor: pointer; border: 1px solid rgba(255,255,255,0.1); }
+    .album-card img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; opacity: 0.7; transition: opacity 0.3s ease; }
+    .album-card:hover img { opacity: 1; }
+    .album-content { position: absolute; inset: 0; display: flex; justify-content: center; align-items: center; background: rgba(0, 0, 0, 0.4); opacity: 0; transition: 0.4s ease; transform: translateZ(60px); }
+    .album-card:hover .album-content { opacity: 1; }
+    .album-content span { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 5px; color: #fff; border: 1px solid #fff; padding: 10px 20px; background: rgba(0,0,0,0.8); }
+</style>
+</head>
+<body>
+    <nav id="mainNav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="News.html">News</a></li>
+            <li><a href="music.html" class="active">Music Store</a></li>
+            <li><a href="Videos.html">Videos</a></li>
+            <li><a href="Concert.html">Concerts</a></li>
+            <li><a href="Photo.html">Photo Gallery</a></li>
+            <li><a href="Mail.html">Mailing List</a></li>
+            <li><a href="Merch.html">Merch Store</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="Policy.html">Privacy Policy</a></li>
+        </ul>
+    </nav>
+    <div id="wrapper">
+        <main>
+            <div class="store-header">
+                <h1>Daft Punk Store</h1>
+                <div class="store-stats">
+                    <div class="stat-item"><span class="stat-label">Collection</span><span class="stat-value">Daft Punk</span></div>
+                    <div class="stat-item"><span class="stat-label">Items</span><span class="stat-value">9 Albums</span></div>
+                    <div class="stat-item"><span class="stat-label">Selection</span><span class="stat-value" id="currentSelection">---</span></div>
+                </div>
+            </div>
+            <div class="music-grid">
+                <div class="album-anchor" data-name="Musique Vol. 1" data-color="blue"><div class="album-card"><img src="musq.png" alt="Musique"><div class="album-content"><span>Shop</span></div></div></div>
+                <div class="album-anchor" data-name="RAM 10th Anniversary" data-color="gold"><div class="album-card"><img src="10.jpg" alt="10th"><div class="album-content"><span>Shop</span></div></div></div>
+                <div class="album-anchor" data-name="Interstella 5555" data-color="purple"><div class="album-card"><img src="inter.jpg" alt="Interstella"><div class="album-content"><span>Shop</span></div></div></div>
+                <div class="album-anchor" data-name="TRON: Legacy" data-color="cyan"><div class="album-card"><img src="tron.jpg" alt="Tron"><div class="album-content"><span>Shop</span></div></div></div>
+                <div class="album-anchor" data-name="Alive 1997 / 2007" data-color="red"><div class="album-card"><img src="alive.jfif" alt="Alive"><div class="album-content"><span>Shop</span></div></div></div>
+                <div class="album-anchor" data-name="Random Access Memories" data-color="gold"><div class="album-card"><img src="ram.png" alt="RAM"><div class="album-content"><span>Shop</span></div></div></div>
+                <div class="album-anchor" data-name="Human After All" data-color="green"><div class="album-card"><img src="human.jpg" alt="Human"><div class="album-content"><span>Shop</span></div></div></div>
+                <div class="album-anchor" data-name="Discovery" data-color="purple"><div class="album-card"><img src="dis.png" alt="Discovery"><div class="album-content"><span>Shop</span></div></div></div>
+                <div class="album-anchor" data-name="Homework" data-color="blue"><div class="album-card"><img src="HW.jpg" alt="Homework"><div class="album-content"><span>Shop</span></div></div></div>
+            </div>
+        </main>
+        <footer><p>&copy; 2026, Andreas Aarhus. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p></footer>
+    </div>
+    <script>
+        const cards = document.querySelectorAll('.album-card');
+        const selectionText = document.getElementById('currentSelection');
+        const colorMap = { blue: "#4a90e2", purple: "#9b51e0", red: "#eb5757", gold: "#f2c94c", green: "#27ae60", cyan: "#56ccf2" };
+        cards.forEach(card => {
+            const anchor = card.parentElement;
+            const albumName = anchor.getAttribute('data-name');
+            const actualColor = colorMap[anchor.getAttribute('data-color')];
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.transform = `rotateX(${(rect.height / 2 - y) / 10}deg) rotateY(${(x - rect.width / 2) / 10}deg)`;
+                selectionText.innerText = albumName;
+                selectionText.style.color = actualColor;
+                selectionText.style.textShadow = `0 0 15px ${actualColor}`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+                selectionText.innerText = "---";
+                selectionText.style.color = "#fff";
+                selectionText.style.textShadow = "none";
+            });
+        });
+    </script>
+</body>
+</html>

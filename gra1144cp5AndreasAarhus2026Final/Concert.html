@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daft Punk | Live Feed | Andreas Aarhus, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+    main { padding: 60px 80px; flex-grow: 1; }
+    #wrapper {
+        position: relative; z-index: 10; width: 1200px; margin: 80px auto 0 auto;
+        background: rgba(10, 10, 15, 0.98); border-left: 1px solid rgba(255, 255, 255, 0.05);
+        border-right: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 0 100px rgba(0,0,0,1); min-height: 100vh; display: flex; flex-direction: column;
+    }
+    .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 20px; }
+    .page-header h1 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 10px; color: #fff; }
+    .status-indicator { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px; color: #00ff00; display: flex; align-items: center; gap: 10px; }
+    .status-dot { width: 8px; height: 8px; background: #00ff00; border-radius: 50%; box-shadow: 0 0 10px #00ff00; animation: blink 1s infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .mosaic-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 15px; }
+    .mosaic-item { position: relative; background: #111; border: 1px solid rgba(255, 255, 255, 0.1); overflow: hidden; cursor: pointer; transition: 0.3s; }
+    .large { grid-column: span 2; grid-row: span 2; }
+    .wide { grid-column: span 2; }
+    .mosaic-item img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: 0.5s ease; }
+    .mosaic-item:hover { transform: scale(1.02); z-index: 20; border-color: #7000ff; box-shadow: 0 0 30px rgba(112, 0, 255, 0.2); }
+    .mosaic-item:hover img { opacity: 1; }
+    .ticket-section { margin-top: 60px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 40px; }
+    .ticket-header { text-transform: uppercase; letter-spacing: 10px; font-size: 1rem; color: #7000ff; margin-bottom: 30px; }
+    .ticket-row { display: flex; justify-content: space-between; align-items: center; padding: 20px; border: 1px solid rgba(255, 255, 255, 0.05); background: rgba(255, 255, 255, 0.01); margin-bottom: 10px; transition: 0.3s; }
+    .ticket-row:hover { border-color: rgba(112, 0, 255, 0.4); background: rgba(112, 0, 255, 0.03); }
+    .ticket-date { font-weight: bold; color: #fff; letter-spacing: 2px; font-size: 1rem; }
+    .ticket-info { flex-grow: 1; padding: 0 40px; }
+    .ticket-city { color: #fff; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; }
+    .ticket-venue { color: #666; font-size: 0.7rem; margin-top: 2px; }
+    .buy-btn { text-decoration: none; color: #7000ff; border: 1px solid #7000ff; padding: 10px 20px; text-transform: uppercase; font-size: 0.6rem; letter-spacing: 3px; transition: 0.3s; }
+    .buy-btn:hover { background: #7000ff; color: #fff; box-shadow: 0 0 20px #7000ff; }
+</style>
+</head>
+<body>
+    <nav id="mainNav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="News.html">News</a></li>
+            <li><a href="music.html">Music Store</a></li>
+            <li><a href="Videos.html">Videos</a></li>
+            <li><a href="Concert.html" class="active">Concerts</a></li>
+            <li><a href="Photo.html">Photo Gallery</a></li>
+            <li><a href="Mail.html">Mailing List</a></li>
+            <li><a href="Merch.html">Merch Store</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="Policy.html">Privacy Policy</a></li>
+        </ul>
+    </nav>
+    <div id="wrapper">
+        <main>
+            <div class="page-header">
+                <h1>Live Transmission</h1>
+                <div class="status-indicator"><div class="status-dot"></div>Signal Optimized</div>
+            </div>
+            <div class="mosaic-grid">
+                <div class="mosaic-item large"><img src="1.gif" alt="Concert 1"></div>
+                <div class="mosaic-item"><img src="2.gif" alt="Concert 2"></div>
+                <div class="mosaic-item"><img src="3.gif" alt="Concert 3"></div>
+                <div class="mosaic-item wide"><img src="4.gif" alt="Concert 4"></div>
+                <div class="mosaic-item"><img src="5.gif" alt="Concert 5"></div>
+                <div class="mosaic-item"><img src="6.gif" alt="Concert 6"></div>
+                <div class="mosaic-item"><img src="7.gif" alt="Concert 7"></div>
+                <div class="mosaic-item"><img src="8.gif" alt="Concert 8"></div>
+                <div class="mosaic-item"><img src="9.gif" alt="Concert 9"></div>
+                <div class="mosaic-item"><img src="10.gif" alt="Concert 10"></div>
+                <div class="mosaic-item"><img src="11.gif" alt="Concert 11"></div>
+                <div class="mosaic-item"><img src="12.gif" alt="Concert 12"></div>
+            </div>
+            <div class="ticket-section">
+                <h2 class="ticket-header">Acquire Admission</h2>
+                <div class="ticket-row">
+                    <div class="ticket-date">AUG 12</div>
+                    <div class="ticket-info"><div class="ticket-city">Miami, FL</div><div class="ticket-venue">Hard Rock Live</div></div>
+                    <a href="#" class="buy-btn">Tickets</a>
+                </div>
+                <div class="ticket-row">
+                    <div class="ticket-date">AUG 15</div>
+                    <div class="ticket-info"><div class="ticket-city">Paris, FR</div><div class="ticket-venue">Accor Arena</div></div>
+                    <a href="#" class="buy-btn">Tickets</a>
+                </div>
+            </div>
+        </main>
+        <footer><p>&copy; 2026, Andreas Aarhus. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p></footer>
+    </div>
+</body>
+</html>

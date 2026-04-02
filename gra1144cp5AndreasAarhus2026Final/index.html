@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daft Punk | Official | Andreas Aarhus, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+    body, html {
+        background: #000 url('Daft Punk.webp') no-repeat center center fixed;
+        background-size: cover;
+        margin: 0; padding: 0;
+    }
+    
+    /* THIS IS THE FIX: This specific line kills the grid from style.css on THIS page only */
+    body::before { display: none !important; }
+
+    #intro-gate {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: flex-start; 
+        align-items: flex-start;    
+        padding-top: 150px; 
+        padding-left: 20px; 
+        z-index: 1; 
+        pointer-events: none;
+    }
+
+    .logo-container {
+        position: relative;
+        width: 850px; 
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #daftPart, #punkPart {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        opacity: 0;
+    }
+
+    .animate-daft { animation: slideInLeft 2.5s cubic-bezier(0.19, 1, 0.22, 1) forwards; }
+    .animate-punk { animation: slideInTop 2.5s cubic-bezier(0.19, 1, 0.22, 1) forwards; }
+    
+    @keyframes slideInLeft {
+        0% { transform: translateX(-120vw); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideInTop {
+        0% { transform: translateY(-100vh); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .scroll-hint {
+        position: fixed;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+        opacity: 0;
+        transition: opacity 0.8s ease;
+    }
+
+    .scroll-hint p {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 12px;
+        color: rgba(255, 255, 255, 0.7);
+        animation: subtlePulse 3s infinite ease-in-out;
+    }
+
+    @keyframes subtlePulse {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 1; }
+    }
+
+    nav {
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 1.2s ease, transform 1.2s ease;
+        z-index: 1000;
+    }
+
+    nav.reveal { opacity: 1; transform: translateY(0); }
+
+    #wrapper {
+        margin: 100vh auto 0 auto;
+        background: rgba(10, 10, 10, 0.98); 
+        box-shadow: 0 -20px 100px rgba(0,0,0,1);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        position: relative;
+        z-index: 10;
+    }
+
+    main {
+        padding: 80px 100px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+        font-weight: 200;
+        text-transform: uppercase;
+        letter-spacing: 12px;
+        color: #fff;
+        margin-bottom: 80px;
+    }
+
+    .anniversary-promo {
+        width: 100%;
+        max-width: 800px;
+        padding: 40px;
+        position: relative;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        border: 1px solid rgba(0, 242, 255, 0.1);
+    }
+    
+    .promo-image {
+        flex: 0 0 280px;
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+    }
+
+    .promo-image img { width: 100%; display: block; }
+
+    .promo-image::after {
+        content: "";
+        position: absolute;
+        top: -100%; left: 0;
+        width: 100%; height: 2px;
+        background: #00f2ff;
+        box-shadow: 0 0 15px #00f2ff;
+        animation: scanLine 4s linear infinite;
+    }
+
+    @keyframes scanLine {
+        0% { top: -5%; }
+        50% { top: 105%; }
+        100% { top: -5%; }
+    }
+    
+    .promo-text { text-align: left; font-family: 'Space Mono', monospace; }
+    .promo-text h3 { color: #fff; font-size: 1.2rem; margin-bottom: 15px; letter-spacing: 4px; text-transform: uppercase; }
+    
+    .promo-tag {
+        display: inline-block;
+        padding: 4px 12px;
+        background: #ffd700;
+        color: #000;
+        font-weight: 700;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+</style>
+</head>
+<body>
+    <section id="intro-gate">
+        <div class="logo-container">
+            <img src="Daft.png" alt="Daft" id="daftPart" class="animate-daft">
+            <img src="Punk.png" alt="Punk" id="punkPart" class="animate-punk">
+        </div>
+    </section>
+
+    <div class="scroll-hint" id="accessHint"><p>Scroll to Access</p></div>
+
+    <nav id="mainNav">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="News.html">News</a></li>
+            <li><a href="music.html">Music Store</a></li>
+            <li><a href="Videos.html">Videos</a></li>
+            <li><a href="Concert.html">Concerts</a></li>
+            <li><a href="Photo.html">Photo Gallery</a></li>
+            <li><a href="Mail.html">Mailing List</a></li>
+            <li><a href="Merch.html">Merch Store</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="Policy.html">Privacy Policy</a></li>
+        </ul>
+    </nav>
+
+    <div id="wrapper">
+        <main>
+            <h2>Archive Access</h2>
+            <div class="anniversary-promo">
+                <div class="promo-image"><img src="10year.jpg" alt="RAM 10 Year"></div>
+                <div class="promo-text">
+                    <h3>R.A.M 10Yr Anniversary</h3>
+                    <div class="promo-tag">Deployment: Out Now</div>
+                </div>
+            </div>
+        </main>
+        <footer><p>&copy; 2026, Andreas Aarhus. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p></footer>
+    </div>
+
+    <script>
+        const nav = document.getElementById('mainNav');
+        const hint = document.getElementById('accessHint');
+        window.addEventListener('load', () => {
+            setTimeout(() => { nav.classList.add('reveal'); }, 2000);
+            setTimeout(() => { hint.style.opacity = '1'; }, 3000);
+        });
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { hint.style.opacity = '0'; } 
+            else { hint.style.opacity = '1'; }
+        });
+    </script>
+</body>
+</html>

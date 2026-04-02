@@ -1,0 +1,84 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body, html { 
+    height: 100%; 
+    background-color: #000; 
+    color: #fff; 
+    font-family: 'Inter', sans-serif; 
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 1;
+    pointer-events: none;
+    animation: diagonalGrid 1.5s linear infinite;
+}
+
+@keyframes diagonalGrid {
+    from { background-position: 0 0; }
+    to { background-position: 50px 50px; }
+}
+
+nav {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 1200px; 
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #777;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: 0.3s;
+    font-family: 'Space Mono', monospace;
+}
+
+nav ul li:nth-child(1) a:hover, nav ul li:nth-child(1) a.active { color: #00f2ff; text-shadow: 0 0 10px #00f2ff; }
+nav ul li:nth-child(2) a:hover, nav ul li:nth-child(2) a.active { color: #ff0055; text-shadow: 0 0 10px #ff0055; }
+nav ul li:nth-child(3) a:hover, nav ul li:nth-child(3) a.active { color: #ffae00; text-shadow: 0 0 10px #ffae00; }
+nav ul li:nth-child(4) a:hover, nav ul li:nth-child(4) a.active { color: #00ff44; text-shadow: 0 0 10px #00ff44; }
+nav ul li:nth-child(5) a:hover, nav ul li:nth-child(5) a.active { color: #7000ff; text-shadow: 0 0 10px #7000ff; }
+nav ul li:nth-child(6) a:hover, nav ul li:nth-child(6) a.active { color: #ffffff; text-shadow: 0 0 10px #ffffff; }
+nav ul li:nth-child(7) a:hover, nav ul li:nth-child(7) a.active { color: #0084ff; text-shadow: 0 0 10px #0084ff; }
+nav ul li:nth-child(8) a:hover, nav ul li:nth-child(8) a.active { color: #ff4d00; text-shadow: 0 0 10px #ff4d00; }
+nav ul li:nth-child(9) a:hover, nav ul li:nth-child(9) a.active { color: #00ffa2; text-shadow: 0 0 10px #00ffa2; }
+nav ul li:nth-child(10) a:hover, nav ul li:nth-child(10) a.active { color: #555; text-shadow: 0 0 10px #555; }
+
+footer {
+    padding: 60px 100px;
+    background: #000;
+    border-top: 1px solid #222;
+    width: 100%;
+}
+
+footer p {
+    font-size: 0.65rem;
+    color: #444;
+    text-align: center;
+    line-height: 1.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    max-width: 900px;
+    margin: 0 auto;
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daft Punk | Supply Hub | Andreas Aarhus, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+    main { padding: 80px 40px; flex-grow: 1; text-align: center; }
+    .merch-stage { display: flex; justify-content: center; gap: 40px; margin-top: 50px; perspective: 1000px; }
+    .artifact-pedestal { flex: 1; max-width: 350px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); padding: 20px; transition: 0.6s; cursor: pointer; position: relative; }
+    .artifact-pedestal:hover { transform: scale(1.05) translateZ(30px); background: rgba(255, 77, 0, 0.05); border-color: #ff4d00; box-shadow: 0 20px 50px rgba(0,0,0,0.9); }
+    .img-container { position: relative; width: 100%; aspect-ratio: 1/1; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #000; }
+    .img-container::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 50%, rgba(0,0,0,0) 10%, rgba(0,0,0,0.7) 100%), linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.05), rgba(0, 255, 0, 0.03), rgba(0, 0, 255, 0.05)); background-size: 100%, 100% 4px, 4px 100%; pointer-events: none; z-index: 5; opacity: 0.9; transition: 0.4s ease; }
+    .artifact-pedestal:hover .img-container::after { opacity: 0; transform: scale(1.1); }
+    .artifact-pedestal img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.5) brightness(0.8); transition: 0.5s ease; }
+    .artifact-pedestal:hover img { filter: grayscale(0) brightness(1.1); transform: scale(1.05); }
+    .artifact-info { margin-top: 25px; text-align: left; font-family: 'Space Mono', monospace; }
+    .artifact-id { font-size: 0.6rem; color: #ff4d00; letter-spacing: 2px; }
+    .artifact-name { font-size: 1rem; color: #fff; text-transform: uppercase; letter-spacing: 4px; margin: 10px 0; }
+    .status-marker { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 8px; background: #00ff00; box-shadow: 0 0 8px #00ff00; animation: pulse 1.5s infinite; }
+    .sold-out .status-marker { background: #ff0000; box-shadow: 0 0 8px #ff0000; }
+    @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+    .purchase-link { display: inline-block; margin-top: 20px; color: #ff4d00; border: 1px solid #ff4d00; padding: 8px 15px; font-size: 0.6rem; text-decoration: none; transition: 0.3s; }
+    .artifact-pedestal:hover .purchase-link { background: #ff4d00; color: #000; }
+</style>
+</head>
+<body>
+    <nav id="mainNav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="News.html">News</a></li>
+            <li><a href="music.html">Music Store</a></li>
+            <li><a href="Videos.html">Videos</a></li>
+            <li><a href="Concert.html">Concerts</a></li>
+            <li><a href="Photo.html">Photo Gallery</a></li>
+            <li><a href="Mail.html">Mailing List</a></li>
+            <li><a href="Merch.html" class="active">Merch Store</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="Policy.html">Privacy Policy</a></li>
+        </ul>
+    </nav>
+    <div id="wrapper">
+        <main>
+            <h2 style="font-family: 'Space Mono'; letter-spacing: 15px; color: #fff; text-transform: uppercase; font-size: 1.2rem;">Physical Artifacts</h2>
+            <div class="merch-stage">
+                <div class="artifact-pedestal">
+                    <span class="artifact-id">ID: VINYL_01</span>
+                    <div class="img-container"><img src="record.webp" alt="Vinyl Record"></div>
+                    <div class="artifact-info"><div class="artifact-name">10th Year Vinyl</div><div style="font-size: 0.55rem; color: #555;"><span class="status-marker"></span> STOCK: AVAILABLE</div><a href="#" class="purchase-link">Acquire</a></div>
+                </div>
+                <div class="artifact-pedestal">
+                    <span class="artifact-id">ID: APPAREL_02</span>
+                    <div class="img-container"><img src="shirt.webp" alt="Shirt"></div>
+                    <div class="artifact-info"><div class="artifact-name">Uniform Shirt</div><div style="font-size: 0.55rem; color: #555;"><span class="status-marker"></span> STOCK: LIMITED</div><a href="#" class="purchase-link">Acquire</a></div>
+                </div>
+                <div class="artifact-pedestal sold-out">
+                    <span class="artifact-id">ID: BOX_03</span>
+                    <div class="img-container"><img src="lunch.webp" alt="Lunch Box"></div>
+                    <div class="artifact-info"><div class="artifact-name">Archive Box</div><div style="font-size: 0.55rem; color: #555;"><span class="status-marker"></span> STOCK: SOLD OUT</div><a href="#" class="purchase-link">Details</a></div>
+                </div>
+            </div>
+        </main>
+        <footer><p>&copy; 2026, Andreas Aarhus. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p></footer>
+    </div>
+</body>
+</html>

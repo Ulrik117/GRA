@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daft Punk | Theater | Andreas Aarhus, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+    main { padding: 60px 80px; flex-grow: 1; }
+    .main-stage { width: 100%; aspect-ratio: 16 / 9; background: #000; border: 1px solid rgba(255, 255, 255, 0.1); position: relative; margin-bottom: 60px; box-shadow: 0 0 80px rgba(0, 255, 68, 0.15); overflow: hidden; }
+    .main-stage img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .playlist-header { text-transform: uppercase; letter-spacing: 10px; font-size: 0.7rem; color: #555; margin-bottom: 25px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 15px; }
+    .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .thumbnail-card { cursor: pointer; position: relative; transition: 0.4s; border: 1px solid rgba(255, 255, 255, 0.1); overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
+    .thumbnail-card:hover { border-color: #00ff44; transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.8); }
+    .thumbnail-card img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.5; transition: 0.4s; }
+    .thumbnail-card:hover img { opacity: 1; transform: scale(1.05); }
+    .video-label { position: absolute; bottom: 0; left: 0; width: 100%; padding: 10px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); font-size: 0.55rem; text-transform: uppercase; letter-spacing: 2px; color: #999; transition: 0.3s; }
+    .thumbnail-card:hover .video-label { color: #fff; }
+</style>
+</head>
+<body>
+    <nav id="mainNav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="News.html">News</a></li>
+            <li><a href="music.html">Music Store</a></li>
+            <li><a href="Videos.html" class="active">Videos</a></li>
+            <li><a href="Concert.html">Concerts</a></li>
+            <li><a href="Photo.html">Photo Gallery</a></li>
+            <li><a href="Mail.html">Mailing List</a></li>
+            <li><a href="Merch.html">Merch Store</a></li>
+            <li><a href="Blog.html">Blog</a></li>
+            <li><a href="Policy.html">Privacy Policy</a></li>
+        </ul>
+    </nav>
+    <div id="wrapper">
+        <main>
+            <div class="main-stage"><img src="helmets.gif" alt="Daft Punk Helmets"></div>
+            <h2 class="playlist-header">Archive Transmission</h2>
+            <div class="video-grid">
+                <div class="thumbnail-card" onclick="window.open('https://www.youtube.com/watch?v=FGBhQbmPwH8')">
+                    <img src="https://img.youtube.com/vi/FGBhQbmPwH8/mqdefault.jpg" alt="One More Time">
+                    <div class="video-label">One More Time</div>
+                </div>
+                <div class="thumbnail-card" onclick="window.open('https://www.youtube.com/watch?v=K0HSD_i2DvA')">
+                    <img src="https://img.youtube.com/vi/K0HSD_i2DvA/mqdefault.jpg" alt="Around The World">
+                    <div class="video-label">Around The World</div>
+                </div>
+                <div class="thumbnail-card" onclick="window.open('https://www.youtube.com/watch?v=CCHdMIEGaaM')">
+                    <img src="https://img.youtube.com/vi/CCHdMIEGaaM/mqdefault.jpg" alt="Get Lucky">
+                    <div class="video-label">Get Lucky</div>
+                </div>
+            </div>
+        </main>
+        <footer><p>&copy; 2026, Andreas Aarhus. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p></footer>
+    </div>
+</body>
+</html>
