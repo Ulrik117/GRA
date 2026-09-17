@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Godzilla City</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            font-family: Arial, sans-serif;
+        }
+        wrapper {
+            width: 100%;
+            max-width: 1366px;
+            margin: 0 auto;
+            display: block;
+        }
+        header {
+            height: 120px;
+            background-color: #f69320;
+            border-bottom: 3px solid #000;
+            text-align: center;
+            line-height: 120px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            text-transform: uppercase;
+        }
+        main {
+            height: 768px;
+            background-color: #FFF;
+            box-sizing: border-box;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        footer {
+            height: 80px;
+            background-color: #f69320;
+            border-top: 3px solid #000;
+            text-align: center;
+            font-size: 11px;
+            padding-top: 15px;
+            color: #000;
+            line-height: 1.4;
+        }
+
+      
+        #godzilla-jump {
+            transform-origin: 0 0;
+            animation: monsterLeap 5s ease-in-out infinite;
+        }
+
+        @keyframes monsterLeap {
+            0% {
+                transform: translate(100px, 400px) scale(1);
+            }
+            50% {
+                transform: translate(500px, 200px) scale(1); 
+            }
+            100% {
+                transform: translate(900px, 400px) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>    
+    <wrapper>        
+        <header>
+            <h1>Godzilla City Attack</h1>
+        </header>		
+        <main>
+           
+        </main>		
+        <footer>
+            <p>© 2026, Andreas Aarhus.<br>
+            This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental.</p>
+        </footer>
+    </wrapper>
+</body>
+</html>
