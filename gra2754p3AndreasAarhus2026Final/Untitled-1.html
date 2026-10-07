@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Y2K Toon Vault | Andreas Aarhus, 2026</title>
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #00aeef; 
+    font-family: "Comic Sans MS", "Marker Felt", "Arial Black", sans-serif;
+    color: #000000;
+    cursor: crosshair; 
+}
+
+wrapper {
+    width: 100%;
+    min-width: 320px; 
+    max-width: 1366px;
+    display: block;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-left: 10px dashed #000000;
+    border-right: 10px dashed #000000;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #ed008c; 
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 10px solid #000000;
+    background-image: repeating-linear-gradient(45deg, #ed008c 25%, #ff1493 25%, #ff1493 50%, #ed008c 50%, #ed008c 75%, #ff1493 75%, #ff1493 100%);
+    background-size: 40px 40px;
+}
+
+.logo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(6px 6px 0px #000000); 
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+.marquee-container {
+    background-color: #fff200; 
+    border: 4px solid #000000;
+    margin-top: 20px;
+    padding: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 4px 4px 0px #000000;
+}
+
+.marquee-text {
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: scrollText 12s linear infinite;
+}
+
+@keyframes scrollText {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+main {
+    padding: 20px;
+    background-image: radial-gradient(#000000 3px, transparent 3px);
+    background-size: 25px 25px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+article {
+    background-color: #ffffff;
+    border: 6px solid #000000;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    box-shadow: 8px 8px 0px #000000;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+article:hover {
+    transform: translate(-6px, -6px) scale(1.03) rotate(-2deg);
+    box-shadow: 14px 14px 0px #ed008c;
+    border-color: #ed008c;
+    background-color: #ffffcc; 
+}
+
+article img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover; 
+    display: block;
+    border-bottom: 6px solid #000000;
+    transition: filter 0.3s;
+}
+
+article:hover img {
+    filter: saturate(150%) contrast(110%);
+}
+
+.content {
+    padding: 0 20px;
+}
+
+article h2 {
+    font-size: 1.8em;
+    color: #ff3300;
+    margin: 20px 0 10px 0;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px #000000;
+    -webkit-text-stroke: 1px black;
+}
+
+article p {
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 0 0 15px 0;
+}
+
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 10px solid #fff200;
+}
+
+footer p {
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+    margin: 10px auto;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+footer .copyright {
+    font-family: "Comic Sans MS", "Arial Black", sans-serif;
+    font-size: 20px;
+    color: #00aeef;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px #ed008c;
+}
+
+
+@media screen and (min-width: 32em) {
+    header {
+        padding: 40px 30px;
+    }
+    
+    .logo {
+        max-width: 500px;
+    }
+    
+    main {
+        padding: 30px;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+}
+
+
+@media screen and (min-width: 64em) {
+    header {
+        padding: 60px 40px;
+    }
+    
+    .logo {
+        max-width: 600px;
+    }
+    
+    main {
+        padding: 50px;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 45px;
+    }
+}
+</style>
+</head>
+<body>
+
+<wrapper>
+    <header>
+        <img src="CN logo.svg" alt="Cartoon Network Logo" class="logo">
+        
+        <div class="marquee-container">
+            <span class="marquee-text">★★★ CARTOON CARTOONS! ★★★ FRIDAY NIGHT PREMIERES! ★★★ GRAB YOUR JAWBREAKERS! ★★★</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="project-grid">
+            
+            <article>
+                <img src="dexter.jpg" alt="Dexter's Laboratory">
+                <div class="content">
+                    <h2>Dexter's Lab</h2>
+                    <p>Enter the secret laboratory! Follow the adventures of a boy genius and his annoying older sister, Dee Dee.</p>
+                </div>
+            </article>
+
+            <article>
+                <img src="power.jpg" alt="The Powerpuff Girls">
+                <div class="content">
+                    <h2>Powerpuff Girls</h2>
+                    <p>Sugar, spice, and everything nice. Blossom, Bubbles, and Buttercup are here to save Townsville from Mojo Jojo!</p>
+                </div>
+            </article>
+
+            <article>
+                <img src="ed.jpg" alt="Ed, Edd n Eddy">
+                <div class="content">
+                    <h2>Ed, Edd n Eddy</h2>
+                    <p>Welcome to the cul-de-sac. Join the Eds on their endless summer quest to scam the neighborhood kids for jawbreaker money.</p>
+                </div>
+            </article>
+
+            <article>
+                <img src="courage.jpg" alt="Courage the Cowardly Dog">
+                <div class="content">
+                    <h2>Courage</h2>
+                    <p>We interrupt this program! A terrified dog living in the middle of Nowhere must protect his owners from the paranormal.</p>
+                </div>
+            </article>
+
+            <article>
+                <img src="bravo.jpg" alt="Johnny Bravo">
+                <div class="content">
+                    <h2>Johnny Bravo</h2>
+                    <p>Whoa, mama! Follow the hilariously misguided adventures of a muscular, pompadour-wearing guy who thinks he's everyone's gift.</p>
+                </div>
+            </article>
+
+            <article>
+                <img src="kids.jpg" alt="Codename: Kids Next Door">
+                <div class="content">
+                    <h2>Kids Next Door</h2>
+                    <p>Kids rule, adults drool! Sector V uses 2x4 technology to fight teenage tyranny and the evil adult villains.</p>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p class="copyright">&copy; 2026, Andreas Aarhus</p>
+        <p class="disclaimer">
+            This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.
+        </p>
+    </footer>
+</wrapper>
+
+</body>
+</html>
